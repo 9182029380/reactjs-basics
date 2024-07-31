@@ -21,7 +21,7 @@ function SignupForm() {
             });
             if (response.ok) {
                 const data = await response.json();
-                localStorage.setItem('user', JSON.stringify(data.user));
+                localStorage.setItem('user', JSON.stringify(data));
                 navigate('/dashboard');
             } else {
                 setErrors({ submit: 'Login failed. Please try again.' });
