@@ -1,18 +1,22 @@
-import React, { Component } from 'react';
-import './App.css';
-import Greeting from './components/Greeting';
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Register from './components/Register';
 import SignupForm from './components/SignupForm';
-function App(){
-  const user={
-    name:"sharath kumar",
-    age:30,
-  };
-  return(
-    <div>
-      <Greeting name={user.name} age={user.age}/>
-      <SignupForm/>
-     </div>
-  );
-}
-export default App;
+import Dashboard from './components/Dashboard';
 
+function App() {
+    return (
+        <Router>
+            <div>
+                <Routes>
+                    <Route path="/" element={<Register />} />
+                    <Route path="/signup" element={<SignupForm />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
+                </Routes>
+            </div>
+        </Router>
+    );
+}
+
+export default App;
